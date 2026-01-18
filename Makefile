@@ -14,7 +14,8 @@ gen-and-watch:
 
 render-build:
 	go tool templ generate
-	go build -tags netgo -ldflags '-s -w' -o app
+	mkdir -p build
+	go build -tags netgo -ldflags '-s -w' -o build/app
 
 clean:
 	rm -rf build
