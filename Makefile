@@ -12,6 +12,10 @@ run-with-air:
 gen-and-watch:
 	go tool templ generate --watch
 
+render-build:
+	go tool templ generate
+	go build -tags netgo -ldflags '-s -w' -o app
+
 clean:
 	rm -rf build
 	mkdir build
