@@ -1,5 +1,7 @@
 package components
 
+import "tmpl-first-time/components/soundcloud_track"
+
 import firstComponent "tmpl-first-time/components/first_component"
 
 var assetPrefix = "/static/components/"
@@ -12,4 +14,6 @@ templ MainComponent() {
 		<link rel="stylesheet" href={ assetPrefix + "main.css" }/>
 	</head>
 	@firstComponent.FirstComponent("Franxx")
+	// normie
+	@soundcloud_track.SoundcloudTrack("normie", "1460036173")
 }

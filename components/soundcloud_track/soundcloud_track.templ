@@ -1,0 +1,22 @@
+package soundcloud_track
+
+const scTracksApiLink = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/"
+
+func GetSrc(id string) string {
+	return scTracksApiLink + id + "&auto_play=false&show_artwork=false"
+}
+
+templ SoundcloudTrack(trackName, trackID string) {
+	<link rel="stylesheet" href="/static/components/soundcloud_track/soundcloud_track.css"/>
+	<h1 class="track-name">{ trackName }</h1>
+	<div class="sc-player-root">
+		<iframe class="sc-widget sc-hidden" allow="autoplay; encrypted-media" src={ GetSrc(trackID) }></iframe>
+		<div class="sc-ui">
+			<button class="sc-play">▶</button>
+			<button class="sc-pause">⏸</button>
+			<input class="sc-seek" type="range" min="0" max="100" value="0"/>
+		</div>
+	</div>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src="/static/components/soundcloud_track/soundcloud_track.js"></script>
+}

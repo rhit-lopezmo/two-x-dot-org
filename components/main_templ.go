@@ -8,6 +8,8 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
+import "tmpl-first-time/components/soundcloud_track"
+
 import firstComponent "tmpl-first-time/components/first_component"
 
 var assetPrefix = "/static/components/"
@@ -40,7 +42,7 @@ func MainComponent() templ.Component {
 		var templ_7745c5c3_Var2 templ.SafeURL
 		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(assetPrefix + "main.css")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/main.templ`, Line: 12, Col: 56}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/main.templ`, Line: 14, Col: 56}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
@@ -51,6 +53,10 @@ func MainComponent() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = firstComponent.FirstComponent("Franxx").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = soundcloud_track.SoundcloudTrack("normie", "1460036173").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
