@@ -1,6 +1,6 @@
 module tmpl-first-time
 
-go 1.25.3
+go 1.25.0
 
 tool github.com/a-h/templ/cmd/templ
 
