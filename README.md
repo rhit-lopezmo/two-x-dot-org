@@ -1,3 +1,5 @@
-# two-x.org
+# [two-x.org](https://two-x.org)
 
-A Neocities-esque blog for two-x.org. Written in Go with Templ.
+A Neocities-esque website for two-x.org. Written in Go with Templ.
+
+Here I host various things, including code, music, gallery, blog, etc...
