@@ -7,23 +7,21 @@
   margin-top: 1em;
 }
 
-a {
+.navbar-item {
   font-family: Courier, sans-serif;
   font-size: 1.3rem;
   font-weight: 1000;
-  text-decoration: none;
   padding: 0.5em 0.5em;
   border-radius: 10px;
   border: 2px solid var(--light-grey);
-  color: var(--light-grey);
 }
 
-a:hover {
+.navbar-item:hover {
   transform: scale(1.05);
   /* transition: all 0.05s ease-out; */
 }
 
-a:active {
+.navbar-item:active {
   transform: scale(0.9);
   filter: brightness(0.8);
   /* transition: all 0.05s ease-out; */

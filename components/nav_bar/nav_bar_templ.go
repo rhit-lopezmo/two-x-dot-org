@@ -45,7 +45,7 @@ func NavBar() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><div class=\"nav-bar-container\"><a id=\"home-link\" href=\"/\">two x<span class=\"blinking-cursor\">|</span></a> <a href=\"/code\">code</a> <a href=\"/music\">music</a> <a href=\"/gallery\">gallery</a> <a href=\"/blog\">blog</a> <a href=\"/about\">about</a></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><div class=\"nav-bar-container\"><a id=\"home-link\" class=\"navbar-item\" href=\"/\">two x<span class=\"blinking-cursor\">|</span></a> <a class=\"navbar-item\" href=\"/code\">code</a> <a class=\"navbar-item\" href=\"/music\">music</a> <a class=\"navbar-item\" href=\"/gallery\">gallery</a> <a class=\"navbar-item\" href=\"/blog\">blog</a> <a class=\"navbar-item\" href=\"/about\">about</a></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

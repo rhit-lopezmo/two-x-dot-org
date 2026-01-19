@@ -14,6 +14,11 @@ body {
   /* font-family: "Chelsea Market", sans-serif; */
 }
 
+a {
+  text-decoration: none;
+  color: var(--light-grey);
+}
+
 .page-container {
   display: flex;
   flex-direction: column;

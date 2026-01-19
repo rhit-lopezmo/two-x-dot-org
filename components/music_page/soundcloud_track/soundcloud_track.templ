@@ -1,0 +1,35 @@
+package soundcloud_track
+
+const scTracksApiLink = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/"
+
+func GetSrc(id string) string {
+	return scTracksApiLink + id + "&auto_play=false&show_artwork=false"
+}
+
+var assetPrefix = "/static/components/music_page/soundcloud_track/"
+var imagePrefix = "/static/images/"
+
+templ SoundcloudTrack(trackName, trackUrl, trackID, imgName string) {
+	<link rel="stylesheet" href={ assetPrefix + "soundcloud_track.css" }/>
+	<a class="track-link" target="_blank" href={ trackUrl }>
+		<h2 class="track-name">{ trackName }</h2>
+	</a>
+	<a href={ trackUrl } target="_blank">
+		<img class="track-img" src={ imagePrefix + imgName }/>
+	</a>
+	<div class="sc-player-root">
+		<iframe class="sc-widget sc-hidden" allow="autoplay; encrypted-media" src={ GetSrc(trackID) }></iframe>
+		<div class="sc-ui">
+			<button class="sc-play">▶</button>
+			<button class="sc-pause">⏸</button>
+			<input class="sc-seek" type="range" min="0" max="100" value="0"/>
+			<div class="sc-time">
+				<span class="sc-elapsed">0:00</span>
+				<span class="sc-divider">/</span>
+				<span class="sc-duration">0:00</span>
+			</div>
+		</div>
+	</div>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src={ assetPrefix + "soundcloud_track.js" }></script>
+}

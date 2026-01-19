@@ -1,0 +1,125 @@
+:root {
+  --sc-progress: 0%;
+  /* played portion */
+  --sc-fill: var(--light-grey);
+  /* unplayed portion */
+  --sc-track: #374151;
+  /* knob */
+  --sc-thumb: var(--light-grey);
+}
+
+.sc-player-root {
+  max-width: 75%;
+  display: inline-block;
+  padding: 12px;
+  border: 1px solid var(--light-grey);
+  border-radius: 10px;
+  background: var(--dark-grey);
+}
+
+.sc-ui {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 520px;
+  flex-wrap: wrap;
+}
+
+.sc-ui button {
+  appearance: none;
+  border: 1px solid var(--light-grey);
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.sc-ui button:hover {
+  filter: brightness(1.5);
+}
+
+.sc-ui button:active {
+  filter: brightness(0.8);
+}
+
+.sc-ui button:focus-visible,
+.sc-seek:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.sc-seek {
+  flex: 1;
+  min-width: 240px;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right,
+      var(--sc-fill) var(--sc-progress),
+      var(--sc-track) var(--sc-progress));
+  outline: none;
+  cursor: pointer;
+}
+
+.sc-seek::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  filter: brightness(1.2);
+  background: var(--sc-thumb);
+  border: 2px solid var(--sc-thumb);
+  box-shadow: 0 0 0 1px 1px var(--dark-grey);
+}
+
+.sc-seek::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--sc-thumb);
+  border: 2px solid var(--sc-thumb);
+}
+
+.sc-seek::-moz-range-track {
+  background: linear-gradient(to right,
+      var(--sc-fill) var(--sc-progress),
+      var(--sc-track) var(--sc-progress));
+  height: 6px;
+  border-radius: 999px;
+}
+
+.sc-hidden {
+  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -9999px;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sc-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+  color: var(--light-grey);
+  font-size: 14px;
+}
+
+.track-link:hover {
+  filter: brightness(1.2);
+}
+
+.track-img {
+  max-width: 250px;
+}
+
+.track-img:hover {
+  transform: scale(1.025);
+  transition: all 0.1s ease-in-out;
+}

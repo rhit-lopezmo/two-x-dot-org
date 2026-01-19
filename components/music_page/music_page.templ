@@ -1,5 +1,25 @@
 package music_page
 
+import sc "two-x-dot-org/components/music_page/soundcloud_track"
+
+var assetPrefix = "/static/components/music_page/"
+
 templ MusicPage() {
-	<h1>This is the music page.</h1>
+	<link rel="stylesheet" href={ assetPrefix + "music_page.css" }/>
+	<h2>{ "(music) => {" }</h2>
+	<div class="music-page-container">
+		@sc.SoundcloudTrack(
+			"normie !",
+			"https://soundcloud.com/boyfranxx/normie",
+			"1460036173",
+			"normie-cover.jpg",
+		)
+		@sc.SoundcloudTrack(
+			"eShop !",
+			"https://soundcloud.com/boyfranxx/eshop",
+			"1495593340",
+			"eShop-cover.jpg",
+		)
+	</div>
+	<h2>{ "}" }</h2>
 }
