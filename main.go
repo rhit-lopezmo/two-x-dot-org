@@ -17,6 +17,8 @@ func main() {
 
 	http.Handle("/", templ.Handler(components.GenHomePage()))
 	http.Handle("/about", templ.Handler(components.GenAboutPage()))
+	http.Handle("/music", templ.Handler(components.GenMusicPage()))
+	http.Handle("/gallery", templ.Handler(components.GenGalleryPage()))
 
 	staticFiles := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", staticFiles))
