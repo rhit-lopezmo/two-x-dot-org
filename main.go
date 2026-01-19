@@ -16,9 +16,11 @@ func main() {
 	log = utils.MainLogger
 
 	http.Handle("/", templ.Handler(components.GenHomePage()))
-	http.Handle("/about", templ.Handler(components.GenAboutPage()))
+	http.Handle("/code", templ.Handler(components.GenCodePage()))
 	http.Handle("/music", templ.Handler(components.GenMusicPage()))
 	http.Handle("/gallery", templ.Handler(components.GenGalleryPage()))
+	http.Handle("/blog", templ.Handler(components.GenBlogPage()))
+	http.Handle("/about", templ.Handler(components.GenAboutPage()))
 
 	staticFiles := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", staticFiles))

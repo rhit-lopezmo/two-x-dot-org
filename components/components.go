@@ -2,6 +2,8 @@ package components
 
 import (
 	about "two-x-dot-org/components/about_page"
+	blog "two-x-dot-org/components/blog_page"
+	code "two-x-dot-org/components/code_page"
 	gallery "two-x-dot-org/components/gallery_page"
 	home "two-x-dot-org/components/home_page"
 	music "two-x-dot-org/components/music_page"
@@ -24,4 +26,12 @@ func GenMusicPage() templ.Component {
 
 func GenGalleryPage() templ.Component {
 	return page.Page(gallery.GalleryPage())
+}
+
+func GenCodePage() templ.Component {
+	return page.Page(code.CodePage())
+}
+
+func GenBlogPage() templ.Component {
+	return page.Page(blog.BlogPage())
 }
