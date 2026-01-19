@@ -1,0 +1,21 @@
+:root {
+  --dark-grey: #121211;
+  --blue-grey: #8AB2B7;
+  --light-pink: #F9DED8;
+  --light-grey: #D2D6D6;
+}
+
+body {
+  margin: 1em 4em;
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  font-size: 20px;
+  font-family: 'Fira Code', sans-serif;
+  /* font-family: "Chelsea Market", sans-serif; */
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 	"path/filepath"
-	"tmpl-first-time/components"
-	"tmpl-first-time/utils"
+	"two-x-dot-org/components"
+	"two-x-dot-org/utils"
 
 	"github.com/a-h/templ"
 )
@@ -15,9 +15,8 @@ func main() {
 	utils.InitLoggers()
 	log = utils.MainLogger
 
-	firstComp := components.MainComponent()
-
-	http.Handle("/", templ.Handler(firstComp))
+	http.Handle("/", templ.Handler(components.GenHomePage()))
+	http.Handle("/about", templ.Handler(components.GenAboutPage()))
 
 	staticFiles := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", staticFiles))
@@ -34,8 +33,8 @@ func main() {
 		}),
 	))
 
-	log.Println("Listening on 8080...")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	log.Println("Listening on 3000...")
+	if err := http.ListenAndServe(":3000", nil); err != nil {
 		log.Fatalln("ERROR: could not start server", err)
 	}
 }

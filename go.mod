@@ -1,13 +1,10 @@
-module tmpl-first-time
+module two-x-dot-org
 
 go 1.25.0
 
 tool github.com/a-h/templ/cmd/templ
 
-require (
-	github.com/a-h/templ v0.3.977
-	golang.org/x/text v0.33.0
-)
+require github.com/a-h/templ v0.3.977
 
 require (
 	github.com/a-h/parse v0.0.0-20250122154542-74294addb73e // indirect

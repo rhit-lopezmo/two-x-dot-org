@@ -1,0 +1,22 @@
+package page
+
+import (
+	"two-x-dot-org/components/footer"
+	navBar "two-x-dot-org/components/nav_bar"
+)
+
+var assetPrefix = "/static/components/page/"
+
+templ Page(content templ.Component) {
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href={ assetPrefix + "page.css" }/>
+	</head>
+	<div class="page-container">
+		@navBar.NavBar()
+		@content
+		@footer.Footer()
+	</div>
+}

@@ -1,0 +1,19 @@
+package nav_bar
+
+var assetPrefix = "/static/components/nav_bar/"
+var imagePrefix = "/static/images/"
+
+templ NavBar() {
+	<link rel="stylesheet" href={ assetPrefix + "nav_bar.css" }/>
+	<div class="nav-bar-container">
+		<a id="home-link" href="/">
+			<!-- <div class="logo-container"> -->
+			<!-- 	<img src={ imagePrefix + "logo.jpg" }/> -->
+			<!-- </div> -->
+			two x<span class="blinking-cursor">|</span>
+		</a>
+		<a href="/about">About</a>
+		<a href="#">Music</a>
+		<a href="#">Gallery</a>
+	</div>
+}
