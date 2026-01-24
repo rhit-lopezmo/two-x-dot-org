@@ -10,7 +10,6 @@ var assetPrefix = "/static/components/music_page/soundcloud_track/"
 var imagePrefix = "/static/images/"
 
 templ SoundcloudTrack(trackName, trackUrl, trackID, imgName string) {
-	<link rel="stylesheet" href={ assetPrefix + "soundcloud_track.css" }/>
 	<a class="track-link" target="_blank" href={ trackUrl }>
 		<h2 class="track-name">{ trackName }</h2>
 	</a>
@@ -30,6 +29,4 @@ templ SoundcloudTrack(trackName, trackUrl, trackID, imgName string) {
 			</div>
 		</div>
 	</div>
-	<script src="https://w.soundcloud.com/player/api.js"></script>
-	<script src={ assetPrefix + "soundcloud_track.js" }></script>
 }

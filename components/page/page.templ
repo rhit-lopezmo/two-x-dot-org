@@ -5,18 +5,28 @@ import (
 	navBar "two-x-dot-org/components/nav_bar"
 )
 
-var assetPrefix = "/static/components/page/"
+var assetPrefix = "/static/components/"
 
 templ Page(content templ.Component) {
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet"/>
-		<link rel="stylesheet" href={ assetPrefix + "page.css" }/>
+		<link rel="stylesheet" href={ assetPrefix + "nav_bar/nav_bar.css" }/>
+		<link rel="stylesheet" href={ assetPrefix + "music_page/soundcloud_track/soundcloud_track.css" }/>
+		<link rel="stylesheet" href={ assetPrefix + "music_page/music_page.css" }/>
+		<link rel="stylesheet" href={ assetPrefix + "page/page.css" }/>
 	</head>
-	<div class="page-container">
-		@navBar.NavBar()
-		@content
-		@footer.Footer()
+	<div class="page-bg">
+		<div class="page-container">
+			@navBar.NavBar()
+			<div id="content">
+				@content
+			</div>
+			@footer.Footer()
+		</div>
 	</div>
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+	<script src={ assetPrefix + "music_page/soundcloud_track/soundcloud_track.js" }></script>
+	<script src={ assetPrefix + "page/page.js" }></script>
 }

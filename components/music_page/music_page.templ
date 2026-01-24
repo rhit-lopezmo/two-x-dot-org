@@ -5,7 +5,6 @@ import sc "two-x-dot-org/components/music_page/soundcloud_track"
 var assetPrefix = "/static/components/music_page/"
 
 templ MusicPage() {
-	<link rel="stylesheet" href={ assetPrefix + "music_page.css" }/>
 	<h2>{ "(music) => {" }</h2>
 	<div class="music-page-container">
 		@sc.SoundcloudTrack(

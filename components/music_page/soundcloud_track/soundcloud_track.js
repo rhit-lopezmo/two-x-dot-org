@@ -1,7 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".sc-player-root").forEach((root) => {
-    const iframe = root.querySelector(".sc-widget");
-    const scUi = root.querySelector(".sc-ui");
+function initSoundcloudPlayers(root = document) {
+  if (!window.SC || !SC.Widget) return;
+
+  root.querySelectorAll(".sc-player-root").forEach((rootEl) => {
+    const iframe = rootEl.querySelector(".sc-widget");
+    const scUi = rootEl.querySelector(".sc-ui");
     if (!iframe || !scUi) return;
 
     const widget = SC.Widget(iframe);
@@ -62,4 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
   });
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => initSoundcloudPlayers());
+} else {
+  initSoundcloudPlayers();
+}
+
+window.initSoundcloudPlayers = initSoundcloudPlayers;

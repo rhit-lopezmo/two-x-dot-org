@@ -32,20 +32,7 @@ func NavBar() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<link rel=\"stylesheet\" href=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var2 templ.SafeURL
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinURLErrs(assetPrefix + "nav_bar.css")
-		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/nav_bar/nav_bar.templ`, Line: 7, Col: 58}
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "\"><div class=\"nav-bar-container\"><a id=\"home-link\" class=\"navbar-item\" href=\"/\">two x<span class=\"blinking-cursor\">|</span></a> <a class=\"navbar-item\" href=\"/code\">code</a> <a class=\"navbar-item\" href=\"/music\">music</a> <a class=\"navbar-item\" href=\"/gallery\">gallery</a> <a class=\"navbar-item\" href=\"/blog\">blog</a> <a class=\"navbar-item\" href=\"/about\">about</a></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"nav-bar-container\"><a id=\"home-link\" class=\"page-link navbar-item\" href=\"/\">two x<span class=\"blinking-cursor\">|</span></a> <a class=\"page-link navbar-item\" href=\"/code\">code</a> <a class=\"page-link navbar-item\" href=\"/music\">music</a> <a class=\"page-link navbar-item\" href=\"/gallery\">gallery</a> <a class=\"page-link navbar-item\" href=\"/blog\">blog</a> <a class=\"page-link navbar-item\" href=\"/about\">about</a></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

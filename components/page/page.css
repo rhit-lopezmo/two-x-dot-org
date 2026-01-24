@@ -8,22 +8,32 @@
 }
 
 body {
-  margin: 1em 4em;
-
-  background-color: var(--dark-grey);
-  background-image:
-    linear-gradient(-45deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
-    linear-gradient(45deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
-    linear-gradient(135deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
-    linear-gradient(-135deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%);
-  background-size: 2rem 2rem;
-  background-position: 2rem 0, 1rem 0, 0 0, 0 0;
-
+  margin: 0;
   color: var(--light-grey);
   font-size: 20px;
   font-family: 'Fira Code', sans-serif;
   /* font-family: "Chelsea Market", sans-serif; */
 }
+
+@keyframes scroll-pattern {
+  from {
+    background-position: 2rem 0, 1rem 0, 0 0, 0 0;
+  }
+
+  to {
+    /* shift one tile down-left */
+    background-position:
+      calc(2rem - 2rem) 2rem,
+      /* 0 2rem */
+      calc(1rem - 2rem) 2rem,
+      /* -1rem 2rem */
+      calc(0rem - 2rem) 2rem,
+      /* -2rem 2rem */
+      calc(0rem - 2rem) 2rem;
+    /* -2rem 2rem */
+  }
+}
+
 
 a {
   text-decoration: none;
@@ -31,7 +41,28 @@ a {
 }
 
 .page-container {
+  margin: 1em 4em;
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.page-bg {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background-color: var(--dark-grey);
+  background-image:
+    linear-gradient(-45deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
+    linear-gradient(45deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
+    linear-gradient(135deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%),
+    linear-gradient(-135deg, transparent 70%, var(--darker-grey) 70% 85%, transparent 85%);
+  /* background-size: 2rem 2rem; */
+  /* background-position: 2rem 0, 1rem 0, 0 0, 0 0; */
+  background-size: 2rem 2rem;
+  background-position: 2rem 0, 1rem 0, 0 0, 0 0;
+  background-repeat: repeat;
+
+  animation: scroll-pattern 5s linear infinite;
 }

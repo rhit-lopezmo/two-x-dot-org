@@ -4,15 +4,14 @@ var assetPrefix = "/static/components/nav_bar/"
 var imagePrefix = "/static/images/"
 
 templ NavBar() {
-	<link rel="stylesheet" href={ assetPrefix + "nav_bar.css" }/>
 	<div class="nav-bar-container">
-		<a id="home-link" class="navbar-item" href="/">
+		<a id="home-link" class="page-link navbar-item" href="/">
 			two x<span class="blinking-cursor">|</span>
 		</a>
-		<a class="navbar-item" href="/code">code</a>
-		<a class="navbar-item" href="/music">music</a>
-		<a class="navbar-item" href="/gallery">gallery</a>
-		<a class="navbar-item" href="/blog">blog</a>
-		<a class="navbar-item" href="/about">about</a>
+		<a class="page-link navbar-item" href="/code">code</a>
+		<a class="page-link navbar-item" href="/music">music</a>
+		<a class="page-link navbar-item" href="/gallery">gallery</a>
+		<a class="page-link navbar-item" href="/blog">blog</a>
+		<a class="page-link navbar-item" href="/about">about</a>
 	</div>
 }
