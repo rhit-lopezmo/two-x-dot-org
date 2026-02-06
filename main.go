@@ -15,6 +15,9 @@ func main() {
 	utils.InitLoggers()
 	log = utils.MainLogger
 
+	log.Println("Server is under construction...")
+	return
+
 	http.Handle("/", templ.Handler(components.GenHomePage()))
 	http.Handle("/code", templ.Handler(components.GenCodePage()))
 	http.Handle("/music", templ.Handler(components.GenMusicPage()))
