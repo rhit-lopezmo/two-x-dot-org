@@ -37,8 +37,12 @@ func main() {
 		}),
 	))
 
+	base := http.DefaultServeMux
+	handler := getOnly(base)
+	handler = hostAllowlist("two-x.org", "www.two-x.org")(handler)
+
 	log.Println("Listening on 3000...")
-	if err := http.ListenAndServe(":3000", getOnly(http.DefaultServeMux)); err != nil {
+	if err := http.ListenAndServe(":3000", handler); err != nil {
 		log.Fatalln("ERROR: could not start server", err)
 	}
 }
@@ -54,4 +58,20 @@ func getOnly(next http.Handler) http.Handler {
 		// Block everything else
 		w.WriteHeader(http.StatusMethodNotAllowed)
 	})
+}
+
+func hostAllowlist(allowed ...string) func(http.Handler) http.Handler {
+	set := map[string]struct{}{}
+	for _, h := range allowed {
+		set[h] = struct{}{}
+	}
+	return func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			if _, ok := set[r.Host]; !ok {
+				http.NotFound(w, r)
+				return
+			}
+			next.ServeHTTP(w, r)
+		})
+	}
 }
